@@ -34,6 +34,11 @@ roundedimageview = { module = "com.makeramen:roundedimageview", version.ref = "r
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 
+#Dagger
+dagger = { group = "com.google.dagger", name = "dagger", version = "2.40.5" }
+hilt = { group = "com.google.dagger", name = "hilt-android", version = "2.40.5" }
+hiltCompiler = { group = "com.google.dagger", name = "hilt-android-compiler", version = "2.40.5" }
+javaInject = { group = "javax.inject", name = "javax.inject", version = "1" }
 
 
 [plugins]
