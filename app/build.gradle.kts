@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -37,6 +39,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    dynamicFeatures += setOf(":favorite")
 
 }
 
@@ -51,6 +54,10 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
+    implementation(libs.dagger)
+    implementation(libs.hilt)
+    kapt(libs.hiltCompiler)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

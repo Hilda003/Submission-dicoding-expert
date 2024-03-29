@@ -1,25 +1,29 @@
 [versions]
 agp = "8.3.0"
-bubblenavigation = "1.0.7"
 kotlin = "1.9.0"
 coreKtx = "1.12.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 appcompat = "1.6.1"
+kotlinParcelizeRuntime = "1.9.20"
+lifecycleLivedataKtx = "2.7.0"
 material = "1.11.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
 roundedimageview = "2.3.0"
 navigationFragmentKtx = "2.7.7"
 navigationUiKtx = "2.7.7"
+annotation = "1.7.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kotlin-parcelize-runtime = { module = "org.jetbrains.kotlin:kotlin-parcelize-runtime", version.ref = "kotlinParcelizeRuntime" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
@@ -32,17 +36,28 @@ roundedimageview = { module = "com.makeramen:roundedimageview", version.ref = "r
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version = "1.2.1" }
+parcelize = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 
 
 #Dagger
-dagger = { group = "com.google.dagger", name = "dagger", version = "2.40.5" }
-hilt = { group = "com.google.dagger", name = "hilt-android", version = "2.40.5" }
-hiltCompiler = { group = "com.google.dagger", name = "hilt-android-compiler", version = "2.40.5" }
+dagger = { group = "com.google.dagger", name = "dagger", version = "2.48" }
+hilt = { group = "com.google.dagger", name = "hilt-android", version = "2.48" }
+hiltCompiler = { group = "com.google.dagger", name = "hilt-android-compiler", version = "2.48" }
 javaInject = { group = "javax.inject", name = "javax.inject", version = "1" }
+androidx-annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
+
+
+#Room
+room = { group = "androidx.room", name = "room-runtime", version = "2.6.1" }
+roomCompiler = { group = "androidx.room", name = "room-compiler", version = "2.6.1" }
+roomKtx = { group = "androidx.room", name = "room-ktx", version = "2.6.1" }
+
 
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
+hiltPlugin = { id = "dagger.hilt.android.plugin", version = "2.44" }
+androidDynamicFeature = { id = "com.android.dynamic-feature", version.ref = "agp" }
 

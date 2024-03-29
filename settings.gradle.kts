@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "Submission-dicoding-expert"
 include(":app")
 include(":core")
+include(":favorite")
