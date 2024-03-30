@@ -1,4 +1,3 @@
 package com.example.core
 
-class AppModule {
-}
+class AppModule
