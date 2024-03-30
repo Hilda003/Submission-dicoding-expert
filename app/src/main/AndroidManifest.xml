@@ -18,7 +18,7 @@
         android:theme="@style/Theme.Submissiondicodingexpert"
         tools:targetApi="tiramisu">
         <activity
-            android:name=".DetailActivity"
+            android:name=".ui.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"

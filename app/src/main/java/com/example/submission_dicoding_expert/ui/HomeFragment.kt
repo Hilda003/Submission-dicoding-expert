@@ -8,12 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.core.data.Resource
 import com.example.core.ui.HomeAdapter
-import com.example.submission_dicoding_expert.DetailActivity
-import com.example.submission_dicoding_expert.R
 import com.example.submission_dicoding_expert.databinding.FragmentHomeBinding
 import com.example.submission_dicoding_expert.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,7 +31,7 @@ class HomeFragment : Fragment() {
 
         setMovie()
         observeMovie()
-        setSearch()
+        searchQuery()
         setSearch()
 
     }
@@ -57,7 +56,7 @@ class HomeFragment : Fragment() {
         }
         homeAdapter.onClick = {
             val intent = Intent(context, DetailActivity::class.java)
-//            intent.putExtra(DetailActivity.EXTRA_DATA, it)
+            intent.putExtra(DetailActivity.EXTRA_MOVIE, it)
             startActivity(intent)
         }
 
@@ -92,26 +91,20 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun observeSearch() {
-        homeViewModel.getMovies().observe(viewLifecycleOwner) {
-            if (it != null) {
-                when (it) {
-                    is Resource.Loading -> {
-                        binding.progressBar.visibility = View.VISIBLE
-                    }
-                    is Resource.Success -> {
-                        binding.progressBar.visibility = View.GONE
-                        it.data?.let { data ->
-                        homeAdapter.setData(data)
-                        }
-                    }
-                    is Resource.Error -> {
-                        binding.progressBar.visibility = View.GONE
-                        Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
-                    }
-                }
+
+    private fun searchQuery() {
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
             }
-        }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                newText?.let {
+                    homeViewModel.setSearchQuery(it)
+                }
+                return true
+            }
+        })
     }
 
     override fun onDestroyView() {

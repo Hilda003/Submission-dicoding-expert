@@ -17,12 +17,4 @@ data class Movie(
     var popularity: Double,
     var voteAverage: Double,
     var isFavorite: Boolean = false
-) : Parcelable {
-    override fun describeContents(): Int {
-        TODO("Not yet implemented")
-    }
-
-    override fun writeToParcel(dest: Parcel, flags: Int) {
-        TODO("Not yet implemented")
-    }
-}
+) : Parcelable

@@ -48,15 +48,23 @@ class MovieRepo @Inject constructor(
 
 
     override fun movieFavorite(): Flow<List<Movie>> {
-        TODO("Not yet implemented")
+
+        return dataLocal.movieFavorite().map {
+            DataMapper.mapEntitiesToDomain(it)
+        }
     }
 
     override fun movieSearch(search: String): Flow<List<Movie>> {
-        TODO("Not yet implemented")
+        return dataLocal.movieFavorite().map {
+            DataMapper.mapEntitiesToDomain(it)
+        }
     }
 
     override fun setMovieFavorite(movie: Movie, state: Boolean) {
-        TODO("Not yet implemented")
+        val movieEntity = DataMapper.mapDomainToEntity(movie)
+        appExecutors.diskIO().execute {
+            dataLocal.setMovieFav(movieEntity, state)
+        }
     }
 
 }
