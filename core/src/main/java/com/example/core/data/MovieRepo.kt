@@ -48,13 +48,14 @@ class MovieRepo @Inject constructor(
 
 
     override fun movieFavorite(): Flow<List<Movie>> {
+
         return dataLocal.movieFavorite().map {
             DataMapper.mapEntitiesToDomain(it)
         }
     }
 
     override fun movieSearch(search: String): Flow<List<Movie>> {
-        return dataLocal.movieSearch(search).map {
+        return dataLocal.movieFavorite().map {
             DataMapper.mapEntitiesToDomain(it)
         }
     }

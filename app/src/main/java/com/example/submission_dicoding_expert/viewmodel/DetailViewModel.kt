@@ -6,10 +6,10 @@ import com.example.core.domain.UseCaseMovie
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-
 @HiltViewModel
-class DetailViewModel @Inject constructor(private val useCaseMovie: UseCaseMovie) : ViewModel(){
+class DetailViewModel @Inject constructor(private val useCaseMovie: UseCaseMovie) : ViewModel() {
 
-        fun setFavoriteMovie(movie: Movie, newStatus: Boolean) =
-            useCaseMovie.setMovieFavorite(movie, newStatus)
+    fun setFavoriteMovie(movie: Movie, newStatus: Boolean) =
+        useCaseMovie.setMovieFavorite(movie, newStatus)
+
 }

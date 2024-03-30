@@ -1,4 +1,3 @@
-package com.example.submission_dicoding_expert.ui
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

@@ -12,31 +12,26 @@ import com.example.core.utils.Helper.loadFromUrl
 import com.example.submission_dicoding_expert.R
 import com.example.submission_dicoding_expert.databinding.ActivityDetailBinding
 import com.example.submission_dicoding_expert.viewmodel.DetailViewModel
-import dagger.hilt.android.AndroidEntryPoint
 
-
-@AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityDetailBinding
     private val detailViewModel: DetailViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailBinding.inflate(layoutInflater)
         enableEdgeToEdge()
+        binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         val movie = intent.getParcelableExtra<Movie>(EXTRA_MOVIE)
         detailData(movie)
         binding.back.setOnClickListener {
             onBackPressed()
         }
-
-
     }
 
     private fun detailData(movie: Movie?) {
@@ -58,6 +53,7 @@ class DetailActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun setFavorite(state: Boolean) {
         if (state) {
             binding.favoriteButton.setImageResource(R.drawable.favorite)
