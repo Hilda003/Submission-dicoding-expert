@@ -4,4 +4,6 @@
     <string name="genre">Genre</string>
     <string name="score">Score</string>
     <string name="image_movie">Image Movie</string>
+    <string name="language">Language :</string>
+    <string name="english">English</string>
 </resources>

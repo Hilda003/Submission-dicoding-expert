@@ -23,7 +23,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
                     ImgMovie.loadFromUrl(BuildConfig.IMAGE_URL + it)
                 }
                 tvMovie.text = movie.title
-                tvGenre.text= movie.originalLanguage
+                txtLanguage.text= movie.originalLanguage
                 tvScore.text = movie.voteAverage.toString()
             }
         }

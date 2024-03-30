@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.submission_dicoding_expert.databinding.ActivityMainBinding
 import com.example.submission_dicoding_expert.ui.HomeFragment
+import com.example.submission_dicoding_expert.ui.SettingFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -20,10 +21,12 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setFragment(HomeFragment())
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+
         }
 
         binding.bottomNav.setOnItemSelectedListener {
@@ -34,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 R.id.favorite -> {
-                    setFragment(FavoriteFragment())
+                    moveToFavorite()
                     true
                 }
                 R.id.setting -> {
@@ -52,5 +55,29 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.layout_fragment, fragment)
             commit()
         }
+    }
+
+
+    override fun onBackPressed() {
+        if (supportFragmentManager.backStackEntryCount <= 1) {
+            finish()
+        } else {
+            super.onBackPressed()
+        }
+    }
+
+    private fun moveToFavorite() {
+        val fragment = instantiateFragment()
+        setFragment(fragment)
+    }
+
+    private fun instantiateFragment(): Fragment {
+        return try {
+            Class.forName("com.example.favorite.FavoriteFragment").newInstance() as Fragment
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Fragment()
+        }
+
     }
 }
