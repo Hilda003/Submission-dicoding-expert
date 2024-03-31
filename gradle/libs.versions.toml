@@ -42,8 +42,7 @@ loggingInterceptor = { group = "com.squareup.okhttp3", name = "logging-intercept
 roundedimageview = { module = "com.makeramen:roundedimageview", version.ref = "roundedimageview" }
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version = "1.2.1" }
-parcelize = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+
 
 
 #Dagger
@@ -66,6 +65,5 @@ androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview"
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
-hiltPlugin = { id = "dagger.hilt.android.plugin", version = "2.44" }
 androidDynamicFeature = { id = "com.android.dynamic-feature", version.ref = "agp" }
 

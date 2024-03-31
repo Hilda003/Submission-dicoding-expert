@@ -19,7 +19,8 @@
             android:layout_height="30dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:src="@drawable/back" />
+            android:src="@drawable/back"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/textView"

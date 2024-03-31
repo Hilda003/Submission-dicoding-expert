@@ -20,6 +20,7 @@
         <activity
             android:name=".ui.DetailActivity"
             android:exported="false" />
+        <!--suppress AndroidDomInspection -->
         <activity
             android:name=".ui.SplashScreenActivity"
             android:exported="false" />
