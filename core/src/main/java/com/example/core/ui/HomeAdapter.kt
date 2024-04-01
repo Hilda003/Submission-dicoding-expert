@@ -2,11 +2,9 @@ package com.example.core.ui
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.core.BuildConfig
-import com.example.core.data.remote.response.MovieResponse
 import com.example.core.databinding.ItemRowBinding
 import com.example.core.domain.Movie
 import com.example.core.utils.Helper.loadFromUrl

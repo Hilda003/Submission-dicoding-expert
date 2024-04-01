@@ -16,4 +16,7 @@
     <string name="title_favorite">Favorite</string>
     <string name="light_mode">Light Mode</string>
     <string name="dark_mode">Dark Mode</string>
+    <string name="todo">TODO</string>
+    <string name="photo">foto</string>
+    <string name="hai">TODO</string>
 </resources>

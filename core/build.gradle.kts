@@ -1,8 +1,9 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("kotlin-kapt")
     id("kotlin-parcelize")
+    id("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -10,7 +11,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        minSdk = 25
+        minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -65,7 +66,7 @@ dependencies {
 
     // Room
     implementation(libs.room)
-    kapt(libs.roomCompiler)
+    annotationProcessor(libs.roomCompiler)
     implementation(libs.roomKtx)
 
     // Dagger Hilt

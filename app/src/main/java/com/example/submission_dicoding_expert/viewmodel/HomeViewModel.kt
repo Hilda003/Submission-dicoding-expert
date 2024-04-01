@@ -19,7 +19,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val useCaseMovie: UseCaseMovie) : ViewModel() {
 
-    private val _queryChannel = MutableStateFlow<String>("")
+    private val _queryChannel = MutableStateFlow("")
     private val queryChannel: StateFlow<String> = _queryChannel
 
     fun setSearchQuery(search: String) {

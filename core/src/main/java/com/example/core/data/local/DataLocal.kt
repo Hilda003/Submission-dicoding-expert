@@ -15,9 +15,9 @@ class DataLocal @Inject constructor(private val daoMovie: DaoMovie){
 
     fun movieFavorite()  : Flow<List<EntityMovie>> = daoMovie.movieFavorite()
 
-    fun movieSearch(search: String)  : Flow<List<EntityMovie>> = daoMovie.movieSearch(search)
-        .flowOn(Dispatchers.Default)
-        .conflate()
+//    fun movieSearch(search: String)  : Flow<List<EntityMovie>> = daoMovie.movieSearch(search)
+//        .flowOn(Dispatchers.Default)
+//        .conflate()
 
     suspend fun insertMovie(entityMovie: List<EntityMovie>) = daoMovie.insertMovie(entityMovie)
 

@@ -34,7 +34,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:srcCompat="@tools:sample/backgrounds/scenic"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="@string/todo" />
 
                 <ImageView
                     android:id="@+id/back"
@@ -45,7 +45,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/back"
-                    android:contentDescription="TODO" />
+                    android:contentDescription="@string/photo" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

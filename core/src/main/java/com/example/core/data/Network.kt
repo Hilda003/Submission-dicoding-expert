@@ -34,7 +34,7 @@ abstract class Network<Result, Request> {
                    is ApiResponse.Error -> {
                        onFetchFailed()
                        emit(
-                           Resource.Error<Result>(
+                           Resource.Error(
                                apiResponse.errorMessage
                            )
                        )

@@ -9,9 +9,7 @@ import com.example.submission_dicoding_expert.R
 
 
 class SettingFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,12 +27,5 @@ class SettingFragment : Fragment() {
     }
 
     companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SettingFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
     }
 }
