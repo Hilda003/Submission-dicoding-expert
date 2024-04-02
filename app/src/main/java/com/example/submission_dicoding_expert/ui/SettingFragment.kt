@@ -26,6 +26,5 @@ class SettingFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_setting, container, false)
     }
 
-    companion object {
-    }
+
 }
