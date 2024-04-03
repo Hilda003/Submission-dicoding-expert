@@ -20,8 +20,6 @@
         <activity
             android:name=".ui.DetailActivity"
             android:exported="false" />
-        <!--suppress AndroidDomInspection -->
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
