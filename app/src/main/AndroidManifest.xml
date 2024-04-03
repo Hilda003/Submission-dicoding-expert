@@ -21,9 +21,7 @@
             android:name=".ui.DetailActivity"
             android:exported="false" />
         <!--suppress AndroidDomInspection -->
-        <activity
-            android:name=".ui.SplashScreenActivity"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
