@@ -63,10 +63,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    annotationProcessor ("android.arch.persistence.room:compiler:1.0.0")
+
+
 
     // Room
     implementation(libs.room)
-    annotationProcessor(libs.roomCompiler)
+    kapt(libs.roomCompiler)
     implementation(libs.roomKtx)
 
     // Dagger Hilt
