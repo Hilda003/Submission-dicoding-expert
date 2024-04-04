@@ -18,15 +18,26 @@ android {
         buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
         buildConfigField("String", "API_KEY", "\"348c6c12ee7e54caf1b8e1a3e6ed3ea0\"")
         buildConfigField("String", "IMAGE_URL", "\"https://image.tmdb.org/t/p/w500/\"")
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+
+        debug {
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+
         }
     }
     compileOptions {
@@ -63,12 +74,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    annotationProcessor ("android.arch.persistence.room:compiler:1.0.0")
+    annotationProcessor (libs.compiler)
 
 
 
     // Room
     implementation(libs.room)
+    //noinspection KaptUsageInsteadOfKsp
     kapt(libs.roomCompiler)
     implementation(libs.roomKtx)
 
@@ -76,5 +88,9 @@ dependencies {
     implementation(libs.dagger)
     implementation(libs.hilt)
     kapt(libs.hiltCompiler)
+
+    // Leak Canary
+    implementation (libs.zetetic.android.database.sqlcipher)
+    implementation (libs.androidx.sqlite.ktx)
 
 }

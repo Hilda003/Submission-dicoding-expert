@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue"
-    tools:context=".FavoriteFragment">
+    tools:context=".FavoriteFragment"
+    tools:ignore="Overdraw">
 
 
     <LinearLayout
@@ -23,7 +24,6 @@
             android:contentDescription="@string/image" />
 
         <TextView
-            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

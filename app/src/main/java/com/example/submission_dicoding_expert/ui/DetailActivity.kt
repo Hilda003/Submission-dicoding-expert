@@ -12,8 +12,11 @@ import com.example.core.utils.Helper.loadFromUrl
 import com.example.submission_dicoding_expert.R
 import com.example.submission_dicoding_expert.databinding.ActivityDetailBinding
 import com.example.submission_dicoding_expert.viewmodel.DetailViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityDetailBinding
     private val detailViewModel: DetailViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +48,7 @@ class DetailActivity : AppCompatActivity() {
             var favorite = movie.isFavorite
 
             setFavorite(favorite)
-            binding.favoriteButton.setOnClickListener {
+            binding.fab.setOnClickListener {
                 favorite = !favorite
                 detailViewModel.setFavoriteMovie(movie, favorite)
                 setFavorite(favorite)
@@ -56,13 +59,18 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setFavorite(state: Boolean) {
         if (state) {
-            binding.favoriteButton.setImageResource(R.drawable.favorite)
+            binding.fab.setImageResource(R.drawable.favorite)
         } else {
-            binding.favoriteButton.setImageResource(R.drawable.favorite_border)
+            binding.fab.setImageResource(R.drawable.favorite_border)
         }
     }
 
     companion object {
         const val EXTRA_MOVIE = "extra_movie"
+    }
+
+    override fun onStop() {
+        super.onStop()
+        binding.ImgMovie.clearFocus()
     }
 }

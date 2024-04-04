@@ -32,7 +32,7 @@ abstract class Network<Result, Request> {
                        })
                    }
                    is ApiResponse.Error -> {
-                       onFetchFailed()
+
                        emit(
                            Resource.Error(
                                apiResponse.errorMessage
@@ -47,7 +47,7 @@ abstract class Network<Result, Request> {
             }
         }
 
-    protected open fun onFetchFailed() {}
+
 
     protected abstract suspend fun createCall(): Flow<ApiResponse<Request>>
    protected abstract fun loadFromDB(): Flow<Result>

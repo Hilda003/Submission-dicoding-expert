@@ -5,12 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
     tools:context=".ui.DetailActivity">
 
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +59,7 @@
                     android:justificationMode="inter_word"
                     android:padding="10dp"
                     android:text="@string/lorem"
-                    android:textColor="@color/white"
+
                     android:textSize="13sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -75,7 +73,6 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="15dp"
                     android:text="@string/madame_web_2024"
-                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +85,7 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="5dp"
                     android:text="@string/genre"
-                    android:textColor="@color/white"
+
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
@@ -99,7 +96,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="64dp"
                     android:text="@string/description"
-                    android:textColor="@color/white"
+
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -112,7 +109,6 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:text="@string/_72"
-                    android:textColor="@color/white"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -124,7 +120,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/favorite_button"
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
